@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/listomania/static/css/main.ca3d9aad.chunk.css",
-    "main.js": "/listomania/static/js/main.ef051585.chunk.js",
-    "main.js.map": "/listomania/static/js/main.ef051585.chunk.js.map",
+    "main.js": "/listomania/static/js/main.5a9f261e.chunk.js",
+    "main.js.map": "/listomania/static/js/main.5a9f261e.chunk.js.map",
     "runtime-main.js": "/listomania/static/js/runtime-main.322a134a.js",
     "runtime-main.js.map": "/listomania/static/js/runtime-main.322a134a.js.map",
-    "static/js/2.62bbb813.chunk.js": "/listomania/static/js/2.62bbb813.chunk.js",
-    "static/js/2.62bbb813.chunk.js.map": "/listomania/static/js/2.62bbb813.chunk.js.map",
+    "static/js/2.c8a8e1a8.chunk.js": "/listomania/static/js/2.c8a8e1a8.chunk.js",
+    "static/js/2.c8a8e1a8.chunk.js.map": "/listomania/static/js/2.c8a8e1a8.chunk.js.map",
     "index.html": "/listomania/index.html",
-    "precache-manifest.d3421da047c9866b90a584af28a235f8.js": "/listomania/precache-manifest.d3421da047c9866b90a584af28a235f8.js",
+    "precache-manifest.129425e6d671c5c4613df550c2099e7e.js": "/listomania/precache-manifest.129425e6d671c5c4613df550c2099e7e.js",
     "service-worker.js": "/listomania/service-worker.js",
     "static/css/main.ca3d9aad.chunk.css.map": "/listomania/static/css/main.ca3d9aad.chunk.css.map",
-    "static/js/2.62bbb813.chunk.js.LICENSE.txt": "/listomania/static/js/2.62bbb813.chunk.js.LICENSE.txt",
+    "static/js/2.c8a8e1a8.chunk.js.LICENSE.txt": "/listomania/static/js/2.c8a8e1a8.chunk.js.LICENSE.txt",
     "static/media/listomania-logo.png": "/listomania/static/media/listomania-logo.d69c2d60.png",
     "static/media/logo.svg": "/listomania/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.322a134a.js",
-    "static/js/2.62bbb813.chunk.js",
+    "static/js/2.c8a8e1a8.chunk.js",
     "static/css/main.ca3d9aad.chunk.css",
-    "static/js/main.ef051585.chunk.js"
+    "static/js/main.5a9f261e.chunk.js"
   ]
 }
