@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/listomania/precache-manifest.129425e6d671c5c4613df550c2099e7e.js"
+  "/listomania/precache-manifest.706830f366e987bc1ac3245a5365f9ef.js"
 );
 
 self.addEventListener('message', (event) => {

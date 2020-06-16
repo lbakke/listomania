@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c6b2c9667a6e12bf5cf6a24dae3d47bb",
+    "revision": "cac22f78d21e447bc1bfe28fc16f03dd",
     "url": "/listomania/index.html"
   },
   {
-    "revision": "fd3419e7857a2d6a3591",
+    "revision": "e78463359c8c4964fb01",
     "url": "/listomania/static/css/main.ca3d9aad.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/listomania/static/js/2.c8a8e1a8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fd3419e7857a2d6a3591",
-    "url": "/listomania/static/js/main.5a9f261e.chunk.js"
+    "revision": "e78463359c8c4964fb01",
+    "url": "/listomania/static/js/main.392eacf5.chunk.js"
   },
   {
     "revision": "77c5635594ef48163032",
