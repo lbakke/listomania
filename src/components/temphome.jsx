@@ -1,35 +1,58 @@
-import React, { useEffect, useState } from 'react'
-import { SpotifyApiContext, User, UserTop } from 'react-spotify-api'
-import Cookies from 'js-cookie'
+import React, { Component, useEffect, useState }from 'react'
+import logo from '../listomania-logo.png';
+import '../App.css';
 
-import { SpotifyAuth, Scopes } from 'react-spotify-auth'
+import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
+import Button from '@material-ui/core/Button';
+import SpotifyWebApi from 'spotify-web-api-js';
+
+import ReactDOM from 'react-dom';
+import SpotifyLogin from 'react-spotify-login';
+import { clientId, redirectUri } from './settings.jsx';
+
+import { SpotifyAuth, Scopes } from 'react-spotify-auth';
+import { SpotifyApiContext, User, UserTop } from 'react-spotify-api'
+
+
+import Cookies from 'js-cookie'
 import 'react-spotify-auth/dist/index.css'
 
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBBtn } from "mdbreact";
 import 'mdbreact/dist/css/mdb.css'
+ 
+const onSuccess = function(response) {
+  console.log(response);
+  console.log("we win?");
+}
 
-import '../index.css';
-import TrackCard from "./trackcard";
-
+const onFailure = function(response) {
+  console.log(response);
+}
 
 const dev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
-const App = () => {
+
+const Home = () => {
   const [spotifyAuthToken, setSpotifyAuthToken] = useState()
-
-  useEffect(() => {
-    setSpotifyAuthToken(Cookies.get('spotifyAuthToken'))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [Cookies.get('spotifyAuthToken')])
-
-  const logout = () => {
-    Cookies.remove('spotifyAuthToken', { path: dev ? '' : 'react-spotify-auth' })
-    window.location = dev ? '/' : '/react-spotify-auth'
-  }
-
   return (
-    <div className='app'>
-      <MDBContainer>
+      <div className="App">
+        {/* <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Ever wonder what would be on your ultimate spotify playlist?
+          </p>
+          <SpotifyLogin clientId={clientId}
+            redirectUri={'https://lbakke.github.io/listomania'}
+            onSuccess={onSuccess}
+            onFailure={onFailure}/>
+          <SpotifyAuth
+            redirectUri='http://localhost:3000/play'
+            clientID='clientId'
+            scopes={[Scopes.userReadPrivate, "user-read-email"]} // either style will work
+          />
+          <Button variant="contained"><Link to="/listomania/about">More Info</Link></Button>
+        </header> */}
+              <MDBContainer>
         {/* If there is a cookie named 'spotifyAuthToken' */}
         {Cookies.get('spotifyAuthToken') ? (
           // Display the app
@@ -47,7 +70,6 @@ const App = () => {
                         <MDBCard>
                           <MDBCardImage
                             className='img-fluid'
-                            src={user.data.images[0]}
                             alt='Your Spotify Profile Picture'
                             waves
                           />
@@ -74,9 +96,7 @@ const App = () => {
                     tracks && tracks.data ? (
                       tracks.data.items.map((track, ind) => {
                         return (
-                          <>
-                            <TrackCard
-                              track={track} />
+                          <> track here?
                           </>
                         )
                       })
@@ -85,9 +105,6 @@ const App = () => {
                 </UserTop>
               </MDBRow>
             </SpotifyApiContext.Provider>
-            <MDBBtn onClick={logout}>
-              Logout
-            </MDBBtn>
           </>
         ) : (
             <div className="login-page">
@@ -105,8 +122,8 @@ const App = () => {
             </div>
           )}
       </MDBContainer>
-    </div>
-  )
+      </div>
+    );
 }
 
-export default App
+export default Home

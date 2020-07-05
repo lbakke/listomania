@@ -7,14 +7,14 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 
 import About from './components/about.jsx'; 
 import Home from './components/home.jsx';
-import Auth from './components/auth.jsx';
+import Play from './components/play.jsx';
 
 const routing = (
   <Router>
     <div>
       <Route exact path="/listomania" component={Home} />
       <Route path="/listomania/about" component={About} />
-      <Route path="listomania/auth" component={Auth} />
+      <Route path="/listomania/play" component={Play} />
     </div>
   </Router>
 )
