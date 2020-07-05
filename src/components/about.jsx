@@ -11,7 +11,9 @@ export default class About extends Component {
       <div>
           <div className="more-info-page">
               <div className="more-info-box">
-                  <p>Create a playlist with your all-time favorite songs. music nerds rise up!!1!
+                  <p><h1>Listomania</h1>...is about playing with playlists! this app will search through your playlists and create one with the qualities you 
+                    want - danceability, etc! it will create the playlist for you and name it [username]-dance, [username]-energy, 
+                    etc! so get ready to see your playlists taken to the next level!
                   </p>
                   <Button variant="contained"><Link to="/listomania/">Go Back</Link></Button>
               </div>
