@@ -12,7 +12,8 @@ import TrackCard from "./trackcard";
 import logo from '../listomania-logo.png';
 // import Button from '@material-ui/core/Button';
 import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
-import { Button } from 'antd';
+import { Button, Card } from 'antd';
+const { Meta } = Card;
 
 
 
@@ -62,8 +63,15 @@ const App = () => {
                       tracks.data.items.map((track, ind) => {
                         return (
                           <>
-                            <TrackCard
-                              track={track} />
+                            <Card
+                                hoverable
+                                style={{ width: 240 }}
+                                cover={<img alt="example" src={track.album.images[0].url} />}
+                              >
+                                <Meta title="Europe Street beat" description="www.instagram.com" />
+                            >
+
+                            </Card>
                           </>
                         )
                       })
