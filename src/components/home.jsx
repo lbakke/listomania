@@ -31,6 +31,7 @@ const App = () => {
     <div className='app'>
       <MDBContainer>
         {/* If there is a cookie named 'spotifyAuthToken' */}
+        <p>this is always here..?</p>
         {Cookies.get('spotifyAuthToken') ? (
           // Display the app
           <>
@@ -97,8 +98,8 @@ const App = () => {
 
               <div className="spotifyBtn">
                 <SpotifyAuth
-                  redirectUri={dev ? 'http://localhost:3000/callback' : 'http://kevinjiang.ca/react-spotify-auth'}
-                  clientID='1a70ba777fec4ffd9633c0c418bdcf39'
+                  redirectUri={dev ? 'http://localhost:3000/listomania' : 'http://lbakke.github.io/listomania'}
+                  clientID='8db0e36af4d14373a26ba100f16b2ad3'
                   scopes={[Scopes.userReadPrivate, Scopes.userReadEmail, "user-top-read"]}
                 />
               </div>
