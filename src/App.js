@@ -9,6 +9,7 @@ import {
 } from "react-router-dom";
 
 import About from './components/about';
+import Play from './components/play';
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         </p>
         <Link to="/listomania/about">About</Link>
         <Route path="/listomania/about" component="about"/>
+        <Route path="/listomania/play" component="play"/>
       </header>
       </Router>
     </div>

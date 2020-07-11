@@ -3,20 +3,33 @@ import { SpotifyApiContext, User, UserTop } from 'react-spotify-api'
 import Cookies from 'js-cookie'
 
 import { SpotifyAuth, Scopes } from 'react-spotify-auth'
+import { FaSpotify } from 'react-icons/fa'; 
 
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBBtn } from "mdbreact";
-import 'mdbreact/dist/css/mdb.css'
+// import 'mdbreact/dist/css/mdb.css'
 
 import '../index.css';
 import TrackCard from "./trackcard";
 import logo from '../listomania-logo.png';
 // import Button from '@material-ui/core/Button';
 import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
-import { Button, Card } from 'antd';
+import { Typography, Space, Button, Card, Popover } from 'antd';
 const { Meta } = Card;
 
+const aboutStyle = {
+  "margin-bottom": "-4px"
+}
 
-
+const about = (
+  <div>
+    <p style={aboutStyle}>Listomania is a tool that</p>
+    <p style={aboutStyle}>creates playlists based on</p>
+    <p style={aboutStyle}>your mood. It uses the</p>
+    <p style={aboutStyle}>playlists you already have</p>
+    <p style={aboutStyle}>to ensure they are full of</p>
+    <p>songs you love!</p>
+  </div>
+);
 
 const dev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
@@ -80,6 +93,9 @@ const App = () => {
                 </UserTop>
               </MDBRow>
             </SpotifyApiContext.Provider>
+            <MDBBtn>
+            <Link to="listomania/play">Instagram</Link>
+            </MDBBtn>
             <MDBBtn onClick={logout}>
               Logout
             </MDBBtn>
@@ -87,18 +103,21 @@ const App = () => {
         ) : (
             <div>
           <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Ever wonder what would be on your ultimate spotify playlist?
-          </p>
-          <div className="spotifyBtn">
+          <p className="home-header">Listomania</p>
+          <div className="spotify-button">
+            <FaSpotify color="#bfff00"></FaSpotify>
                 <SpotifyAuth
                   redirectUri={dev ? 'http://localhost:3000/listomania' : 'http://lbakke.github.io/listomania'}
                   clientID='8db0e36af4d14373a26ba100f16b2ad3'
                   scopes={[Scopes.userReadPrivate, Scopes.userReadEmail, "user-top-read"]}
+                  btnClassName="spotify-button"
+                  noLogo='true'
+                  title='Login with Spotify'
                 />
               </div>
-          <Button variant="contained"><Link to="/listomania/about">More Info</Link></Button>
+          <Popover style={{"max-width": "200px"}} placement="bottom" title="What is this?" content={about} trigger="click">
+            <Button type="text">More Info</Button>
+          </Popover>
           </header>
             </div>
           )}

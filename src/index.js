@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import 'antd/dist/antd.css';
 
 import About from './components/about.jsx'; 
 import Home from './components/home.jsx';
