@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/listomania/static/css/main.f2502666.chunk.css",
-    "main.js": "/listomania/static/js/main.f467647d.chunk.js",
-    "main.js.map": "/listomania/static/js/main.f467647d.chunk.js.map",
+    "main.css": "/listomania/static/css/main.ebcbc303.chunk.css",
+    "main.js": "/listomania/static/js/main.95017950.chunk.js",
+    "main.js.map": "/listomania/static/js/main.95017950.chunk.js.map",
     "runtime-main.js": "/listomania/static/js/runtime-main.322a134a.js",
     "runtime-main.js.map": "/listomania/static/js/runtime-main.322a134a.js.map",
     "static/css/2.4c4477be.chunk.css": "/listomania/static/css/2.4c4477be.chunk.css",
-    "static/js/2.b9fc54c3.chunk.js": "/listomania/static/js/2.b9fc54c3.chunk.js",
-    "static/js/2.b9fc54c3.chunk.js.map": "/listomania/static/js/2.b9fc54c3.chunk.js.map",
+    "static/js/2.e5c3a27f.chunk.js": "/listomania/static/js/2.e5c3a27f.chunk.js",
+    "static/js/2.e5c3a27f.chunk.js.map": "/listomania/static/js/2.e5c3a27f.chunk.js.map",
     "index.html": "/listomania/index.html",
-    "precache-manifest.0dbd2466805c93572a450265cfaabb83.js": "/listomania/precache-manifest.0dbd2466805c93572a450265cfaabb83.js",
+    "precache-manifest.a1666835d660d01295698a63611738ad.js": "/listomania/precache-manifest.a1666835d660d01295698a63611738ad.js",
     "service-worker.js": "/listomania/service-worker.js",
     "static/css/2.4c4477be.chunk.css.map": "/listomania/static/css/2.4c4477be.chunk.css.map",
-    "static/css/main.f2502666.chunk.css.map": "/listomania/static/css/main.f2502666.chunk.css.map",
-    "static/js/2.b9fc54c3.chunk.js.LICENSE.txt": "/listomania/static/js/2.b9fc54c3.chunk.js.LICENSE.txt",
+    "static/css/main.ebcbc303.chunk.css.map": "/listomania/static/css/main.ebcbc303.chunk.css.map",
+    "static/js/2.e5c3a27f.chunk.js.LICENSE.txt": "/listomania/static/js/2.e5c3a27f.chunk.js.LICENSE.txt",
     "static/media/App.css": "/listomania/static/media/Quicksand-Medium.865b25e4.ttf",
     "static/media/listomania-logo.png": "/listomania/static/media/listomania-logo.d69c2d60.png",
     "static/media/logo.svg": "/listomania/static/media/logo.5d5d9eef.svg",
@@ -22,8 +22,8 @@
   "entrypoints": [
     "static/js/runtime-main.322a134a.js",
     "static/css/2.4c4477be.chunk.css",
-    "static/js/2.b9fc54c3.chunk.js",
-    "static/css/main.f2502666.chunk.css",
-    "static/js/main.f467647d.chunk.js"
+    "static/js/2.e5c3a27f.chunk.js",
+    "static/css/main.ebcbc303.chunk.css",
+    "static/js/main.95017950.chunk.js"
   ]
 }

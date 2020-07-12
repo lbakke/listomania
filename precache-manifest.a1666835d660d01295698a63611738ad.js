@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cadd06801e05f6b2e26c7f38cdab44ad",
+    "revision": "2fd72f260641aca2b40e5d303f52d805",
     "url": "/listomania/index.html"
   },
   {
-    "revision": "2bcaf4b0bccb60b77d5a",
+    "revision": "dd090c1d72444a9baaa5",
     "url": "/listomania/static/css/2.4c4477be.chunk.css"
   },
   {
-    "revision": "e9fc949c2426e96943f1",
-    "url": "/listomania/static/css/main.f2502666.chunk.css"
+    "revision": "cfa7f32fda5b4236be05",
+    "url": "/listomania/static/css/main.ebcbc303.chunk.css"
   },
   {
-    "revision": "2bcaf4b0bccb60b77d5a",
-    "url": "/listomania/static/js/2.b9fc54c3.chunk.js"
+    "revision": "dd090c1d72444a9baaa5",
+    "url": "/listomania/static/js/2.e5c3a27f.chunk.js"
   },
   {
     "revision": "03ec1923666f401e1015f1f646e54898",
-    "url": "/listomania/static/js/2.b9fc54c3.chunk.js.LICENSE.txt"
+    "url": "/listomania/static/js/2.e5c3a27f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e9fc949c2426e96943f1",
-    "url": "/listomania/static/js/main.f467647d.chunk.js"
+    "revision": "cfa7f32fda5b4236be05",
+    "url": "/listomania/static/js/main.95017950.chunk.js"
   },
   {
     "revision": "77c5635594ef48163032",
