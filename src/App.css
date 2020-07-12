@@ -66,3 +66,62 @@
   cursor: pointer; 
   background-color: #fafafa;
 }
+
+.navbar {
+  margin-top: 20px; 
+  height: 80px; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.navbar-logo {
+  padding-left: 100px; 
+  font-family: Quicksand; 
+  float: left;
+}
+
+.navbar-user {
+  float: right; 
+  padding-right: 100px; 
+  font-family: Quicksand; 
+}
+
+.home-authenticated {
+  min-height: 70vh; 
+}
+
+.home-header-authenticated {
+  min-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(30px + 2vw);
+  font-family: Quicksand !important;
+  color: black; 
+  margin-bottom: 10px; 
+}
+
+.home-buttons-holder {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  margin-bottom: 200px; 
+}
+
+.home-other-buttons-holder {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+
+.home-button {
+  display: inline; 
+  margin-left: 20px; 
+  margin-right: 20px; 
+}
+
+.button1 {
+  background-color: #8fffa7;
+  border-color: black; 
+}

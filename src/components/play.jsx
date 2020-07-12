@@ -6,7 +6,7 @@ import { SpotifyAuth, Scopes } from 'react-spotify-auth'
 // import 'react-spotify-auth/dist/index.css'
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBBtn } from "mdbreact";
 import Cookies from 'js-cookie'
-
+import Navbar from './navbar.jsx'
 
 const Play = () => {
   const [spotifyAuthToken, setSpotifyAuthToken] = useState()
@@ -17,6 +17,7 @@ const Play = () => {
   }, [Cookies.get('spotifyAuthToken')])
   return (
     <div className='app'>
+      <Navbar></Navbar>
       <SpotifyApiContext.Provider value={spotifyAuthToken}>
               <User>
                 {(user) =>
@@ -35,14 +36,3 @@ const Play = () => {
 }
 
 export default Play;
-
-// export default class Play extends Component {
-//     render() {
-//       return (
-//         <div>
-//           play component
-//           nothing ishere ?
-//         </div>
-//       )
-//     }
-// }

@@ -4,6 +4,7 @@ import Cookies from 'js-cookie'
 
 import { SpotifyAuth, Scopes } from 'react-spotify-auth'
 import { FaSpotify } from 'react-icons/fa'; 
+import Navbar from './navbar.jsx'
 
 import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBBtn } from "mdbreact";
 // import 'mdbreact/dist/css/mdb.css'
@@ -20,14 +21,44 @@ const aboutStyle = {
   "margin-bottom": "-4px"
 }
 
+const button1 = {
+  "background-color": "#8fffa7",
+  "border-color": "black", 
+  "color": "black"
+}
+
+const button2 = {
+  "background-color": "#8ffffb",
+  "border-color": "black", 
+  "color": "black"
+}
+
+const button3 = {
+  "background-color": "#ffd08f",
+  "border-color": "black", 
+  "color": "black"
+}
+
+const button4 = {
+  "background-color": "#ff8fe3",
+  "border-color": "black", 
+  "color": "black"
+}
+
+const button5 = {
+  "background-color": "#bb9cff",
+  "border-color": "black", 
+  "color": "black"
+}
+
 const about = (
   <div>
-    <p style={aboutStyle}>Listomania is a tool that</p>
-    <p style={aboutStyle}>creates playlists based on</p>
-    <p style={aboutStyle}>your mood. It uses the</p>
-    <p style={aboutStyle}>playlists you already have</p>
-    <p style={aboutStyle}>to ensure they are full of</p>
-    <p>songs you love!</p>
+    <p style={aboutStyle}>Listomania is a tool that creates</p>
+    <p style={aboutStyle}>playlists based on your mood. It uses</p>
+    <p style={aboutStyle}>the playlists you already have to ensure</p>
+    <p>they are full of songs you love!</p>
+    <p style={aboutStyle}>This tool was created by Lauren Bakke: </p>
+    <a href="https://lbakke.github.io" style={{"color": "blue"}}>lbakke.github.io</a>
   </div>
 );
 
@@ -43,62 +74,34 @@ const App = () => {
 
   const logout = () => {
     Cookies.remove('spotifyAuthToken', { path: dev ? '' : 'react-spotify-auth' })
-    window.location = dev ? '/' : '/react-spotify-auth'
+    window.location = dev ? '/listomania' : '/react-spotify-auth'
   }
 
   return (
     <div className='app'>
-      <MDBContainer>
         {/* If there is a cookie named 'spotifyAuthToken' */}
         {Cookies.get('spotifyAuthToken') ? (
           // Display the app
           <>
-            <SpotifyApiContext.Provider value={spotifyAuthToken}>
-              <User>
-                {(user) =>
-                  user && user.data ? (
-                    <>
-                      <h1>Hello, {user.data.display_name} !</h1>
-                    </>
-                  ) : (
-                      <p>Loading...</p>
-                    )
-                }
-              </User>
-              <h2>select one of the following buttons to create a playlist with your favorite songs in that category! the app will 
-                scrape your public playlists and put one together that's perfect for whatever mood you're feeling! 
-              </h2>
-              <h2>your latest top tracks...</h2>
-              <MDBRow className="masonry-with-columns">
-                <UserTop type="tracks">
-                  {(tracks, loading, error) =>
-                    tracks && tracks.data ? (
-                      tracks.data.items.map((track, ind) => {
-                        return (
-                          <>
-                            <Card
-                                hoverable
-                                style={{ width: 240 }}
-                                cover={<img alt="example" src={track.album.images[0].url} />}
-                              >
-                                <Meta title="Europe Street beat" description="www.instagram.com" />
-                            >
-
-                            </Card>
-                          </>
-                        )
-                      })
-                    ) : null
-                  }
-                </UserTop>
-              </MDBRow>
-            </SpotifyApiContext.Provider>
-            <MDBBtn>
-            <Link to="listomania/play">Instagram</Link>
-            </MDBBtn>
-            <MDBBtn onClick={logout}>
-              Logout
-            </MDBBtn>
+          <Navbar></Navbar>
+            <div className="home-authenticated">
+            <div className="home-header-authenticated">current mood?</div>
+            <div className="home-buttons-holder">
+              <Button className="home-button" style={button1} size="large" type="primary"><Link to="listomania/play">dance party</Link></Button>
+              <Button className="home-button" style={button2} size="large"><Link to="listomania/play">happy thoughts</Link></Button>
+              <Button className="home-button" style={button3} size="large"><Link to="listomania/play">sad boi hours</Link></Button>
+              <Button className="home-button" style={button4} size="large"><Link to="listomania/play">big brain</Link></Button>
+              <Button className="home-button" style={button5} size="large"><Link to="listomania/play">sentimental favs</Link></Button>
+            </div>
+            </div>
+            <div className="home-other-buttons-holder">
+              <Popover style={{"max-width": "200px"}} placement="bottom" title="What is this?" content={about} trigger="click">
+                <Button className="home-button" size="large">What's Happening?</Button>
+              </Popover>
+              <Button className="home-button" size="large" onClick={logout}>                
+                Logout
+              </Button>
+            </div>
           </>
         ) : (
             <div>
@@ -121,7 +124,6 @@ const App = () => {
           </header>
             </div>
           )}
-      </MDBContainer>
     </div>
   )
 }
