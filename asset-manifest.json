@@ -1,24 +1,29 @@
 {
   "files": {
-    "main.css": "/listomania/static/css/main.ca3d9aad.chunk.css",
-    "main.js": "/listomania/static/js/main.392eacf5.chunk.js",
-    "main.js.map": "/listomania/static/js/main.392eacf5.chunk.js.map",
+    "main.css": "/listomania/static/css/main.f2502666.chunk.css",
+    "main.js": "/listomania/static/js/main.f467647d.chunk.js",
+    "main.js.map": "/listomania/static/js/main.f467647d.chunk.js.map",
     "runtime-main.js": "/listomania/static/js/runtime-main.322a134a.js",
     "runtime-main.js.map": "/listomania/static/js/runtime-main.322a134a.js.map",
-    "static/js/2.c8a8e1a8.chunk.js": "/listomania/static/js/2.c8a8e1a8.chunk.js",
-    "static/js/2.c8a8e1a8.chunk.js.map": "/listomania/static/js/2.c8a8e1a8.chunk.js.map",
+    "static/css/2.4c4477be.chunk.css": "/listomania/static/css/2.4c4477be.chunk.css",
+    "static/js/2.b9fc54c3.chunk.js": "/listomania/static/js/2.b9fc54c3.chunk.js",
+    "static/js/2.b9fc54c3.chunk.js.map": "/listomania/static/js/2.b9fc54c3.chunk.js.map",
     "index.html": "/listomania/index.html",
-    "precache-manifest.706830f366e987bc1ac3245a5365f9ef.js": "/listomania/precache-manifest.706830f366e987bc1ac3245a5365f9ef.js",
+    "precache-manifest.0dbd2466805c93572a450265cfaabb83.js": "/listomania/precache-manifest.0dbd2466805c93572a450265cfaabb83.js",
     "service-worker.js": "/listomania/service-worker.js",
-    "static/css/main.ca3d9aad.chunk.css.map": "/listomania/static/css/main.ca3d9aad.chunk.css.map",
-    "static/js/2.c8a8e1a8.chunk.js.LICENSE.txt": "/listomania/static/js/2.c8a8e1a8.chunk.js.LICENSE.txt",
+    "static/css/2.4c4477be.chunk.css.map": "/listomania/static/css/2.4c4477be.chunk.css.map",
+    "static/css/main.f2502666.chunk.css.map": "/listomania/static/css/main.f2502666.chunk.css.map",
+    "static/js/2.b9fc54c3.chunk.js.LICENSE.txt": "/listomania/static/js/2.b9fc54c3.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/listomania/static/media/Quicksand-Medium.865b25e4.ttf",
     "static/media/listomania-logo.png": "/listomania/static/media/listomania-logo.d69c2d60.png",
-    "static/media/logo.svg": "/listomania/static/media/logo.5d5d9eef.svg"
+    "static/media/logo.svg": "/listomania/static/media/logo.5d5d9eef.svg",
+    "static/media/spotify~bkRyBIbO.svg": "/listomania/static/media/spotify~bkRyBIbO.9c3dc69e.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.322a134a.js",
-    "static/js/2.c8a8e1a8.chunk.js",
-    "static/css/main.ca3d9aad.chunk.css",
-    "static/js/main.392eacf5.chunk.js"
+    "static/css/2.4c4477be.chunk.css",
+    "static/js/2.b9fc54c3.chunk.js",
+    "static/css/main.f2502666.chunk.css",
+    "static/js/main.f467647d.chunk.js"
   ]
 }
