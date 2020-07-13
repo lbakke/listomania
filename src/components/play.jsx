@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from 'react'
 import '../App.css'; 
-import { SpotifyApiContext, User, UserTop, UserPlaylists, Playlist, PlaylistTracks } from 'react-spotify-api'
+import { SpotifyApiContext, User, UserTop, UserPlaylists, Playlist, PlaylistTracks, TrackFeatures } from 'react-spotify-api'
 
 import { SpotifyAuth, Scopes } from 'react-spotify-auth'
 // import 'react-spotify-auth/dist/index.css'
@@ -8,15 +8,27 @@ import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardBody, MDBCardImage, MDBCa
 import Cookies from 'js-cookie'
 import Navbar from './navbar.jsx'
 
-var myPlaylists = []; 
+var myTracks = []; 
+var bestTracks = []; 
 
 const Play = () => {
   const [spotifyAuthToken, setSpotifyAuthToken] = useState()
+  var displayTracks = false; 
 
   useEffect(() => {
     setSpotifyAuthToken(Cookies.get('spotifyAuthToken'))
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [Cookies.get('spotifyAuthToken')])
+  }, [Cookies.get('spotifyAuthToken')]);
+
+  useEffect(() => {         // TODO: make this use a promise instead of setTimeout 
+    const timer = setTimeout(() => {
+      for (var i = 0; i < myTracks.length; i++) {
+        console.log(myTracks[i].track.name); 
+      }
+    }, 3000); 
+  }, []); 
+
+
   return (
     <div className='app'>
       <Navbar></Navbar>
@@ -27,22 +39,12 @@ const Play = () => {
                     <>
                       
                               Welcome, {user.data.display_name}
-                              <p>{spotifyAuthToken}</p>
                     </>
                   ) : (
                       <p>Loading...</p>
                     )
                 }
               </User>
-              {/* <PlaylistTracks id="060QHhmOlYMEfFdxl4NpAS">
-                  {(tracks, loading, error) => (
-                      tracks ? (
-                          tracks.items.map(track => (
-                              <h1 key={track.track.id}>{track.track.name}</h1>
-                          ))
-                      ) : null
-                  )}
-              </PlaylistTracks> */}
                 <UserTop type="tracks">
                   {(tracks, loading, error) =>
                     tracks && tracks.data ? (
@@ -62,12 +64,28 @@ const Play = () => {
                       playlists.data.items.map((playlist) => {
                         return (
                           <>
-                            <Playlist id={playlist.id}>
-                            {(playlist, loading, error) => (
-                                playlist && playlist.data ? (
-                                  <div>{playlist.data.name}, {playlist.data.owner.display_name}</div>) : null
+                            <PlaylistTracks id={playlist.id}>
+                            {(tracks, loading, error) => (
+                                tracks && tracks.data ? (
+                                  tracks.data.items.map(track => {
+                                    myTracks.push(track); 
+                                    return(
+                                      <>
+                                      {/* <TrackFeatures id={track.track.id}>
+                                      {(features) => 
+                                        features ? (
+                                          <>
+                                          <p>featurers...?</p>
+                                          <h1>{features.data.mode}</h1> 
+                                          </>
+                                        ) : null
+                                      }
+                                    </TrackFeatures> */}
+                                    <p key={track.track.id}>{track.track.name}</p>
+                                    </>
+                                  )})) : null 
                             )}
-                          </Playlist>
+                          </PlaylistTracks>
                           </>
                         )
                       })
