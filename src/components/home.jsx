@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { SpotifyApiContext, User, UserTop } from 'react-spotify-api'
+import { SpotifyApiContext, User, UserTop, Playlist } from 'react-spotify-api'
 import Cookies from 'js-cookie'
 
 import { SpotifyAuth, Scopes } from 'react-spotify-auth'
@@ -55,8 +55,8 @@ const about = (
   <div>
     <p style={aboutStyle}>Listomania is a tool that creates</p>
     <p style={aboutStyle}>playlists based on your mood. It uses</p>
-    <p style={aboutStyle}>the playlists you already have to ensure</p>
-    <p>they are full of songs you love!</p>
+    <p style={aboutStyle}>the public playlists you already have to</p>
+    <p>ensure they are full of songs you love!</p>
     <p style={aboutStyle}>This tool was created by Lauren Bakke: </p>
     <a href="https://lbakke.github.io" style={{"color": "blue"}}>lbakke.github.io</a>
   </div>
@@ -92,6 +92,17 @@ const App = () => {
               <Button className="home-button" style={button3} size="large"><Link to="listomania/play">sad boi hours</Link></Button>
               <Button className="home-button" style={button4} size="large"><Link to="listomania/play">big brain</Link></Button>
               <Button className="home-button" style={button5} size="large"><Link to="listomania/play">sentimental favs</Link></Button>
+              <Playlist id="0VviCM2hqUSpElUSbAur3c">
+                {(playlist, loading, error) =>
+                  playlist ? (
+                    <>
+                      <p>{playlist.length}</p>
+                    </>
+                  ) : (
+                      <p>Loading...</p>
+                    )
+                }
+              </Playlist>
             </div>
             </div>
             <div className="home-other-buttons-holder">
@@ -110,9 +121,9 @@ const App = () => {
           <div className="spotify-button">
             <FaSpotify color="#bfff00"></FaSpotify>
                 <SpotifyAuth
-                  redirectUri={dev ? 'http://localhost:3000/listomania' : 'http://lbakke.github.io/listomania'}
+                  redirectUri={dev ? 'http://localhost:3000/listomania' : 'https://lbakke.github.io/listomania/'}
                   clientID='8db0e36af4d14373a26ba100f16b2ad3'
-                  scopes={[Scopes.userReadPrivate, Scopes.userReadEmail, "user-top-read"]}
+                  scopes={[Scopes.userReadPrivate, Scopes.userReadEmail, Scopes.userTopRead, Scopes.playlistReadCollaborative, Scopes.playlistModifyPublic]}
                   btnClassName="spotify-button"
                   noLogo='true'
                   title='Login with Spotify'
