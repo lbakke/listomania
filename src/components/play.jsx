@@ -20,14 +20,6 @@ const Play = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [Cookies.get('spotifyAuthToken')]);
 
-  useEffect(() => {         // TODO: make this use a promise instead of setTimeout 
-    const timer = setTimeout(() => {
-      for (var i = 0; i < myTracks.length; i++) {
-        console.log(myTracks[i].track.name); 
-      }
-    }, 3000); 
-  }, []); 
-
 
   return (
     <div className='app'>
@@ -71,16 +63,17 @@ const Play = () => {
                                     myTracks.push(track); 
                                     return(
                                       <>
-                                      {/* <TrackFeatures id={track.track.id}>
+                                      <p>trackid: {track.track.id}</p>
+                                      <TrackFeatures id={track.track.id}>
                                       {(features) => 
-                                        features ? (
+                                        features && features.data ? (
                                           <>
                                           <p>featurers...?</p>
-                                          <h1>{features.data.mode}</h1> 
+                                          <p>{features.data.danceability}</p> 
                                           </>
                                         ) : null
                                       }
-                                    </TrackFeatures> */}
+                                    </TrackFeatures>
                                     <p key={track.track.id}>{track.track.name}</p>
                                     </>
                                   )})) : null 
